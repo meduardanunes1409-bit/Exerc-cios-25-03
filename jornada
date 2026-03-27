@@ -1,0 +1,25 @@
+using System;
+
+namespace projeto
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Digite o número de horas trabalhadas no mês:");
+            double horas = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite o valor da hora de trabalho:");
+            double valorHora = double.Parse(Console.ReadLine());
+
+            double horasNormais = 40 * 4;
+            double horasExtras = horas - horasNormais;
+
+            double salarioFixo = horas * valorHora;
+            double salarioTotal = salarioFixo + (horasExtras * valorHora * 0.5);
+
+            Console.WriteLine($"Salário fixo: {salarioFixo:F2}");
+            Console.WriteLine($"Salário total: {salarioTotal:F2}");
+        }
+    }
+}
